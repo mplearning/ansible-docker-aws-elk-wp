@@ -1,8 +1,10 @@
 # AWS_ANSIBLE_DOCKER_ELK_WORDPRESS
 
+## Description
 The playbooks found here attempt to deploy the following stack and related components on AWS.    
 
 * Create a VPC in a given AWS region.      
+* Create a Subnet within the VPC.
 * Create a Security Group for the newly created VPC with following ports allowing Ingress :      
   * 22 [ssh]    
   * 80 [http]    

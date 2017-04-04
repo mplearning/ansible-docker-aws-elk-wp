@@ -1,0 +1,9 @@
+# VPC Vars
+vpc_region: us-east-1
+vpc_subnet_az: us-east-1a
+vpc_cidr: 10.0.0.0
+vpc_name: elk_wordpress_vpc
+
+# Subnet Vars
+subnet_name: elk_wordpress_subnet
+subnet_tier: elk_wordpress
