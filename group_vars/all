@@ -45,10 +45,14 @@ sg_rules:
 instance_ami: ami-49c9295f
 instance_key_pair: n-virginia-temp
 
-
 # ELK Instance Vars
 elk_instance_type: t2.medium
 elk_instance_name_tag: elk_box
 elk_instance_host_group_name: elkhosts
 elk_instance_root_volume_name: /dev/sda1
 elk_instance_root_volume_size: 100
+
+# Wordpress Instance Vars
+wordpress_instance_type: t2.medium
+wordpress_instance_name_tag: wordpress_box
+wordpress_instance_host_group_name: wordpresshosts

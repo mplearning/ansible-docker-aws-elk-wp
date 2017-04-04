@@ -5,3 +5,4 @@
       - vpc
       - security_groups
       - elk_spawn
+      - wordpress_spawn
