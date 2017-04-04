@@ -30,8 +30,8 @@ The playbooks found here attempt to deploy the following stack and related compo
 * On "wordpress_box" we install the following additional logging components :       
   * Filebeat : to tail files and relay them to Elasticsearch.     
   * Metricbeat : to relay metrics from the operating system and services to Elasticsearch.     
-  * AWS Cloudwatch Agent : to relay chosen logs to AWS Cloudwatch logs, which can in future enable settings alerts and notifications.     
+  * AWS Cloudwatch Agent : to relay chosen logs to AWS Cloudwatch logs, which can in future enable setting alerts and notifications.     
 
 
 * On "elk_box" we install the following additional logging components:  
-  * AWS Cloudwatch Agent : to relay chosen logs to AWS Cloudwatch logs, which can in future enable settings alerts and notifications.
+  * AWS Cloudwatch Agent : to relay chosen logs to AWS Cloudwatch logs, which can in future enable setting alerts and notifications.
