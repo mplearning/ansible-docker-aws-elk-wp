@@ -7,3 +7,35 @@ vpc_name: elk_wordpress_vpc
 # Subnet Vars
 subnet_name: elk_wordpress_subnet
 subnet_tier: elk_wordpress
+
+# Security Group vars
+elk_wordpress_sg_name: elk_wordpress_security_group
+sg_rules:
+  - proto: tcp
+    from_port: 22
+    to_port: 22
+    cidr_ip: 0.0.0.0/0
+  - proto: tcp
+    from_port: 80
+    to_port: 80
+    cidr_ip: 0.0.0.0/0
+  - proto: tcp
+    from_port: 443
+    to_port: 443
+    cidr_ip: 0.0.0.0/0
+  - proto: tcp
+    from_port: 5044
+    to_port: 5044
+    cidr_ip: 0.0.0.0/0
+  - proto: tcp  # Logstash TCP Input
+    from_port: 5000
+    to_port: 5000
+    cidr_ip: 0.0.0.0/0
+  - proto: tcp  # Elasticsearch HTTP
+    from_port: 9200
+    to_port: 9200
+    cidr_ip: 0.0.0.0/0
+  - proto: tcp  # Elasticsearch TCP transport
+    from_port: 9300
+    to_port: 9300
+    cidr_ip: 0.0.0.0/0
