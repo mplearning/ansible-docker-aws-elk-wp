@@ -4,3 +4,4 @@
   roles:
       - vpc
       - security_groups
+      - elk_spawn
