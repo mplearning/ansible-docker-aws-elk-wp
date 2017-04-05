@@ -29,7 +29,7 @@ These playbooks have been tested on the following Ansible versions.
 * Set up and AWS account.     
 * Create an AWS user or role with sufficient permissions to create VPC, Security groups and EC2 instances.   
 * Set up the Ansible server along with the dependencies mentioned above.   
-* Use the access and secret keys on the Ansible server per these [instructions](http://docs.aws.amazon.com/aws-sdk-php/v2/guide/credentials.html#credential-profiles)       
+* Use the access and secret keys on the Ansible server per these [instructions](http://docs.aws.amazon.com/aws-sdk-php/v2/guide/credentials.html#credential-profiles).       
 * Create a Role for the Cloudwatch logs agent to use and assign policies as mentioned [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html). The Ansible playbooks will automatically assign this role to the instances it provisions.        
 
 
@@ -81,12 +81,10 @@ The details of logging on each of the hosts are as follows :
 
 * elk_box      
   * AWS Cloudwatch logs agent is installed on the host.      
-  * Nginx access and error logs, that reside within the container are mapped to a volume on the host.      
-  * The Nginx logs are then streamed to AWS Cloudwatch logs.      
+  * All [Docker containers](https://github.com/gautammanohar/docker-compose-elk-wp/blob/master/docker-compose-wordpress.yml) are run with the "syslog" logging driver. This drive relays stdout/stderr logs to the ELK stack.                
   * The host syslog is streamed to AWS Cloudwatch logs.     
 
-* wordpress_box
-  * Nginx access and error logs, that reside within the container are mapped to a volume on the host.      
+* wordpress_box     
   * Mysql error, general and slow-query logs, that reside within the container are mapped to a volume on the host.
   * All [Docker containers](https://github.com/gautammanohar/docker-compose-elk-wp/blob/master/docker-compose-wordpress.yml) are run with the "syslog" logging driver. This drive relays stdout/stderr logs to the ELK stack.      
   * Filebeat is installed on the host to relay Mysql error, general and slow-query logs from host to Elasticsearch.
