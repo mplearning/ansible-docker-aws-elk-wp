@@ -65,7 +65,7 @@ The playbooks found here attempt to deploy the following stack and related compo
 
 
 ## Logging / Monitoring
-Logging is primary done on the Docker container hosts themselves rather than within the containers themselves. This is so that the logging infrastructure can be kept flexible and be in a state to enable logging backend changes without rebuilding the Docker images themselves.   
+Logging is primarily done on the Docker container hosts themselves rather than within the containers themselves. This is so that the logging infrastructure can be kept flexible and be in a state to enable logging backend changes without rebuilding the Docker images themselves.   
 
 The primary intention of streaming logs to AWS Cloudwatch also (in addition to ELK) is to enable creation of Alerts and notifications based on the content of the incoming streams.
 
