@@ -88,6 +88,28 @@ The details of logging on each of the hosts are as follows :
   * The host syslog is streamed to AWS Cloudwatch logs.  
 
 
+## Playbooks
+
+To provision vpc, instances(2) and deploy the entire wordpress/mysql and Elk stack. This playbook includes all other playbooks...
+```sh
+$ ansible-playbook fullstack.yml
+```
+
+To provision vpc,security_groups and instances only
+```sh
+$ ansible-playbook provisioner.yml
+```                  
+
+To only deploy ELK stack after AWS infrastructure has been provisioned.
+```sh
+$ ansible-playbook elk.yml
+```
+
+To only deploy wordpress/mysql stack after AWS infrastructure has been provisioned. (note: docker expects syslog address to be operational )
+```sh
+$ ansible-playbook wordpress.yml
+```
+
 ## Roles            
  * [common](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/common)       
  * [vpc](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/vpc)       
