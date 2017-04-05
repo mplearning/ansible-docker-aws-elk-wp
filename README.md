@@ -65,6 +65,14 @@ The playbooks found here attempt to deploy the following stack and related compo
 
 
  ## Logging / Monitoring
+ Logging is primary done on the Docker container hosts themselves rather than within the containers themselves. This is so that the logging infrastructure can be kept flexible and be in a state to enable logging backend changes without rebuilding the Docker images themselves. The details of logging on each of the hosts are as follows :      
+
+* elk_box      
+  * AWS Cloudwatch logs agent is installed on the host.      
+  * Nginx access and error logs, that reside within the container are mapped to a volume on the host.      
+  * The Nginx logs are then streamed to AWS Cloudwatch logs.      
+  * The host syslog is stream to AWS Cloudwatch logs.  
+
 
  ## Roles            
  * [common](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/common)       
@@ -82,3 +90,5 @@ The playbooks found here attempt to deploy the following stack and related compo
 
 
  ## Testing
+
+ ## Production Improvements
