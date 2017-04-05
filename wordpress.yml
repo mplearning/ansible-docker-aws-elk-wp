@@ -6,5 +6,6 @@
   roles:
       - common
       - wordpress
+      - logger
       - filebeat
       - metricbeat
