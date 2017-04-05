@@ -44,6 +44,7 @@ sg_rules:
 # Common EC2 Instance Vars
 instance_ami: ami-49c9295f
 instance_key_pair: n-virginia-temp
+instance_role: elk-cloudlog-role
 
 # ELK Instance Vars
 elk_instance_type: t2.medium

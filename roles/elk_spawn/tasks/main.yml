@@ -5,6 +5,7 @@
     group: "{{ elk_wordpress_sg_name }}"
     keypair: "{{ instance_key_pair }}"
     instance_type: "{{ elk_instance_type }}"
+    instance_profile_name: {{ instance_role }}
     image: "{{ instance_ami }}"
     vpc_subnet_id: "{{ lookup('file', 'roles/vpc/vars/subnet-info.yml') }}"
     assign_public_ip: True
