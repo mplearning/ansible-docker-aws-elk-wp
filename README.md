@@ -25,6 +25,14 @@ These playbooks have been tested on the following Ansible versions.
   * **Note**: Running module tests does not work on Ansible 2.2.2.0 as mentioned [here](https://github.com/ansible/ansible/issues/23016)         
 
 
+## Prerequisites         
+* Set up and AWS account.     
+* Create an AWS user or role with sufficient permissions to create VPC, Security groups and EC2 instances.   
+* Set up the Ansible server along with the dependencies mentioned above.   
+* Use the access and secret keys on the Ansible server per these [instructions](http://docs.aws.amazon.com/aws-sdk-php/v2/guide/credentials.html#credential-profiles)       
+* Create a Role for the Cloudwatch logs agent to use and assign policies as mentioned [here](http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/QuickStartEC2Instance.html). The Ansible playbooks will automatically assign this role to the instances it provisions.        
+
+
 ## Description
 The playbooks found here attempt to deploy the following stack and related components on AWS.    
 
