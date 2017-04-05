@@ -9,3 +9,5 @@
       - logger
       - filebeat
       - metricbeat
+      - role: cloudwatch
+        logs: "{{ wordpresslogs }}"
