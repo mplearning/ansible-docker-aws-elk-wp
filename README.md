@@ -66,6 +66,19 @@ The playbooks found here attempt to deploy the following stack and related compo
 
  ## Logging / Monitoring
 
- ## Roles
+ ## Roles            
+ * [common](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/common)       
+ * [vpc](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/vpc)       
+ * [security_groups](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/security_groups)          
+ * [elk_spawn](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/elk_spawn)       
+ * [wordpress_spawn](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/wordpress_spawn)      
+ * [elk](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/elk)       
+ * [wordpress](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/wordpress)      
+ * [logger](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/logger)         
+ * [filebeat](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/filebeat)         
+ * [metricbeat](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/metricbeat)         
+ * [cloudwatch](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/cloudwatch)        
+
+
 
  ## Testing
