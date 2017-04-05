@@ -90,7 +90,7 @@ The details of logging on each of the hosts are as follows :
   * Filebeat is installed on the host to relay Mysql error, general and slow-query logs from host to Elasticsearch.
   * Metricbeat is installed on the host to relay metrics from the operating system and services to Elasticsearch.
   * AWS Cloudwatch logs agent is installed on the host.         
-  * The Nginx logs mapped to the host volumes are streamed to AWS Cloudwatch logs.      
+  * The Mysql logs mapped to the host volumes are streamed to AWS Cloudwatch logs.      
   * The host syslog is streamed to AWS Cloudwatch logs.  
 
 
