@@ -56,3 +56,9 @@ elk_instance_root_volume_size: 100
 wordpress_instance_type: t2.medium
 wordpress_instance_name_tag: wordpress_box
 wordpress_instance_host_group_name: wordpresshosts
+
+# Folder that holds the Docker repos.
+docker_repo_folder: /my_docker_repos/docker-compose-elk
+docker_repo_remote: git@bitbucket.org:gmanohar/docker-compose-elk.git
+docker_compose_elk_file: /my_docker_repos/docker-compose-elk/docker-compose-elk.yml
+docker_compose_wordpress_file: /my_docker_repos/docker-compose-elk/docker-compose-wordpress.yml
