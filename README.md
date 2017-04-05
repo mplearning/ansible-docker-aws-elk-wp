@@ -22,7 +22,7 @@ These playbooks have been tested on the following Ansible versions.
 * [boto](http://boto.cloudhackers.com/en/latest/)      
 * [boto3](https://boto3.readthedocs.io/en/latest/)         
 * [module](https://github.com/metacloud/molecule)       
-  * **Note**: Running module tests work only on Ansible 2.2.1.0 as mentioned [here](https://github.com/ansible/ansible/issues/23016)         
+  * **Note**: Running module tests does not work on Ansible 2.2.2.0 as mentioned [here](https://github.com/ansible/ansible/issues/23016)         
 
 
 ## Description
@@ -64,14 +64,28 @@ The playbooks found here attempt to deploy the following stack and related compo
   * AWS Cloudwatch Agent : to relay chosen logs to AWS Cloudwatch logs, which can in future enable setting alerts and notifications.      
 
 
- ## Logging / Monitoring
- Logging is primary done on the Docker container hosts themselves rather than within the containers themselves. This is so that the logging infrastructure can be kept flexible and be in a state to enable logging backend changes without rebuilding the Docker images themselves. The details of logging on each of the hosts are as follows :      
+## Logging / Monitoring
+Logging is primary done on the Docker container hosts themselves rather than within the containers themselves. This is so that the logging infrastructure can be kept flexible and be in a state to enable logging backend changes without rebuilding the Docker images themselves.   
+
+The primary intention of streaming logs to AWS Cloudwatch also (in addition to ELK) is to enable creation of Alerts and notifications based on the content of the incoming streams.
+
+The details of logging on each of the hosts are as follows :      
 
 * elk_box      
   * AWS Cloudwatch logs agent is installed on the host.      
   * Nginx access and error logs, that reside within the container are mapped to a volume on the host.      
   * The Nginx logs are then streamed to AWS Cloudwatch logs.      
-  * The host syslog is stream to AWS Cloudwatch logs.  
+  * The host syslog is streamed to AWS Cloudwatch logs.     
+
+* wordpress_box
+  * Nginx access and error logs, that reside within the container are mapped to a volume on the host.      
+  * Mysql error, general and slow-query logs, that reside within the container are mapped to a volume on the host.
+  * All [Docker containers](https://github.com/gautammanohar/docker-compose-elk-wp/blob/master/docker-compose-wordpress.yml) are run with the "syslog" logging driver. This drive relays stdout/stderr logs to the ELK stack.      
+  * Filebeat is installed on the host to relay Mysql error, general and slow-query logs from host to Elasticsearch.
+  * Metricbeat is installed on the host to relay metrics from the operating system and services to Elasticsearch.
+  * AWS Cloudwatch logs agent is installed on the host.         
+  * The Nginx logs are then streamed to AWS Cloudwatch logs.      
+  * The host syslog is streamed to AWS Cloudwatch logs.  
 
 
  ## Roles            
