@@ -1,5 +1,22 @@
 # AWS_ANSIBLE_DOCKER_ELK_WORDPRESS
 
+
+## Ansible Support      
+These playbooks have been tested on the following Ansible versions.         
+
+* [Ansible 2.2.2.0](http://releases.ansible.com/ansible/ansible-2.2.2.0.tar.gz)      
+* [Ansible 2.2.1.0](http://releases.ansible.com/ansible/ansible-2.2.1.0.tar.gz)     
+
+
+## Dependencies       
+
+* [Ansible](https://www.ansible.com/)       
+* [boto](http://boto.cloudhackers.com/en/latest/)      
+* [boto3](https://boto3.readthedocs.io/en/latest/)         
+* [module](https://github.com/metacloud/molecule)       
+  * Note: Running module tests work only on Ansible 2.2.1.0 as mentioned [here](https://github.com/ansible/ansible/issues/23016)       
+
+
 ## Description
 The playbooks found here attempt to deploy the following stack and related components on AWS.    
 
@@ -36,4 +53,11 @@ The playbooks found here attempt to deploy the following stack and related compo
 
 
 * On "elk_box" we install the following additional logging components:  
-  * AWS Cloudwatch Agent : to relay chosen logs to AWS Cloudwatch logs, which can in future enable setting alerts and notifications.
+  * AWS Cloudwatch Agent : to relay chosen logs to AWS Cloudwatch logs, which can in future enable setting alerts and notifications.      
+
+
+ ## Logging / Monitoring
+
+ ## Roles
+
+ ## Testing

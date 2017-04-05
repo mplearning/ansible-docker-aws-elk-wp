@@ -63,3 +63,14 @@ docker_repo_folder: /my_docker_repos/docker-compose-elk
 docker_repo_remote: git@github.com:gautammanohar/docker-compose-elk-wp.git
 docker_compose_elk_file: /my_docker_repos/docker-compose-elk/docker-compose-elk.yml
 docker_compose_wordpress_file: /my_docker_repos/docker-compose-elk/docker-compose-wordpress.yml
+
+# Cloudwatch Logging vars
+elklogs:
+  - file: /var/log/syslog
+    group_name: elk-host-syslog
+    format: "%b %d %H:%M:%S"
+
+wordpresslogs:
+  - file: /var/log/syslog
+    group_name: wp-host-syslog
+    format: "%b %d %H:%M:%S"
