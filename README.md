@@ -84,11 +84,11 @@ The details of logging on each of the hosts are as follows :
   * Filebeat is installed on the host to relay Mysql error, general and slow-query logs from host to Elasticsearch.
   * Metricbeat is installed on the host to relay metrics from the operating system and services to Elasticsearch.
   * AWS Cloudwatch logs agent is installed on the host.         
-  * The Nginx logs are then streamed to AWS Cloudwatch logs.      
+  * The Nginx logs mapped to the host volumes are streamed to AWS Cloudwatch logs.      
   * The host syslog is streamed to AWS Cloudwatch logs.  
 
 
- ## Roles            
+## Roles            
  * [common](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/common)       
  * [vpc](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/vpc)       
  * [security_groups](https://github.com/gautammanohar/ansible-docker-aws-elk-wp/tree/master/roles/security_groups)          
@@ -103,6 +103,12 @@ The details of logging on each of the hosts are as follows :
 
 
 
- ## Testing
+## Testing
 
- ## Production Improvements
+## Production Enhancements       
+Following playbook and infrastructure enhancements/modifications are suggested for a production environment :
+
+* Create two separate subnets within the VPC. One subnet should be for the wordpress/mysql stack and the other for the ELK stack.    
+* The ELK stack and subnet should accept incoming requests (except for 80 and 443) only from the wordpress/mysql stack.   
+* ELK container host should attach a separate volume to store ELK related Data.    
+* There should be an additional playbook that allows to move all ELK related Data from the existing volume to another for redundancy.
