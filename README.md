@@ -1,4 +1,12 @@
-# AWS_ANSIBLE_DOCKER_ELK_WORDPRESS
+# AWS_ANSIBLE_DOCKER_ELK_WORDPRESS        
+Ansible playbooks to provision and configure :      
+* Wordpress       
+* Mysql    
+* Elasticsearch   
+* Logstash    
+* Kibana    
+* Docker
+* Docker-compose
 
 
 ## Ansible Support      
@@ -14,7 +22,7 @@ These playbooks have been tested on the following Ansible versions.
 * [boto](http://boto.cloudhackers.com/en/latest/)      
 * [boto3](https://boto3.readthedocs.io/en/latest/)         
 * [module](https://github.com/metacloud/molecule)       
-  * Note: Running module tests work only on Ansible 2.2.1.0 as mentioned [here](https://github.com/ansible/ansible/issues/23016)       
+  * **Note**: Running module tests work only on Ansible 2.2.1.0 as mentioned [here](https://github.com/ansible/ansible/issues/23016)         
 
 
 ## Description
