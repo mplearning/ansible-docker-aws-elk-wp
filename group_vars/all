@@ -64,7 +64,11 @@ docker_repo_remote: git@github.com:gautammanohar/docker-compose-elk-wp.git
 docker_compose_elk_file: /my_docker_repos/docker-compose-elk/docker-compose-elk.yml
 docker_compose_wordpress_file: /my_docker_repos/docker-compose-elk/docker-compose-wordpress.yml
 
-# Cloudwatch Logging vars
+# Logging vars
+mysql_general_log_file: /var/lib/docker/volumes/dockercomposeelk_db_logs/_data/mysql_general.log
+mysql_slow_log_file: /var/lib/docker/volumes/dockercomposeelk_db_logs/_data/mysql_slow.log
+mysql_error_log_file: /var/lib/docker/volumes/dockercomposeelk_db_logs/_data/mysql_error.log
+
 elklogs:
   - file: /var/log/syslog
     group_name: elk-host-syslog
@@ -74,3 +78,12 @@ wordpresslogs:
   - file: /var/log/syslog
     group_name: wp-host-syslog
     format: "%b %d %H:%M:%S"
+  - file: "{{ mysql_general_log_file }}"
+    group_name: wp-mysql-general-log
+    format: "%Y-%m-%dT%H:%M:%S.%f"
+  - file: "{{ mysql_slow_log_file }}"
+    group_name: wp-mysql-slow-log
+    format: "%Y-%m-%dT%H:%M:%S.%f"
+  - file: "{{ mysql_error_log_file }}"
+    group_name: wp-mysql-error-log
+    format: "%Y-%m-%dT%H:%M:%S.%f"

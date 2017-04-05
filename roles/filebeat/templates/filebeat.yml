@@ -17,19 +17,19 @@ filebeat.prospectors:
 
 - input_type: log
   paths:
-    - /var/lib/docker/volumes/dockercomposeelk_db_logs/_data/mysql_general.log
+    - "{{ mysql_general_log_file }}"
   document_type: mysql-queries
 
 
 - input_type: log
   paths:
-    - /var/lib/docker/volumes/dockercomposeelk_db_logs/_data/mysql_slow.log
+    - "{{ mysql_slow_log_file }}"
   document_type: mysql-slow
 
 
 - input_type: log
   paths:
-    - /var/lib/docker/volumes/dockercomposeelk_db_logs/_data/mysql_error.log
+    - "{{ mysql_error_log_file }}"
   document_type: mysql-error
 
     #- c:\programdata\elasticsearch\logs\*
